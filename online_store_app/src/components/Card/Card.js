@@ -19,7 +19,10 @@ export default function Card({ product }) {
 
     return (
         <div className='card' onClick={goToProductPage}>
-            <img className="pic" src={product.image.url} />
+            <div>
+                <img className="pic" src={product.image.url} />
+
+            </div>
             <div className="container">
 
                 <div className='title'>{product.title}</div>

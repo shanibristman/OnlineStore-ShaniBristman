@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <>
-            <div>
+            <div className="title">
                 online store
             </div>
             <Search />
