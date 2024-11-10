@@ -12,16 +12,13 @@
 
 }
 .pic{
-    /* width: 300px; */
-    /* height: 200px; /* play around with this number until you get the height you need */
-    /* width: 200px; */
-    /* max-width: 100%; */ 
-    width: 200px;
-    height: 200px;
-    /* object-fit: cover; */
+
+    width: 150px;
+    height: 150px;
 }
 
-.container{
-    padding: 2px 16px;
+.card .container{
+    font-size: 0.7em;
+    margin:10px;
 
 }

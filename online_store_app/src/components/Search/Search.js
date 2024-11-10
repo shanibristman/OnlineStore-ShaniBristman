@@ -17,15 +17,16 @@ export default function Search() {
 
     const searchFunc = (text) => {
         let res = products.filter((item) => typeof item.title == 'string' && item.title.includes(text.toLowerCase()))
-        SetSearchResults(res)
+        searchText ? SetSearchResults(res) :
+            (
+                SetSearchResults([])
+
+            )
     }
 
     const submitSearch = () => {
-
-        // dispatch(fetchSearchData(searchText));
         searchFunc(searchText)
-        console.log(searchResults);
-        SetShowList(!showList)
+        SetShowList(true)
 
     }
 
@@ -41,7 +42,7 @@ export default function Search() {
                 <i className={`fa-solid fa-magnifying-glass`} onClick={submitSearch} ></i>
                 {showList &&
                     searchResults && (
-                        <div>
+                        <div className='list'>
                             {
                                 searchResults.map(item => (
                                     <div key={item.id} onClick={() => selectItem(item)}>{item.title}</div>
@@ -52,9 +53,9 @@ export default function Search() {
                 }
                 {
                     showList &&
-                    searchResults.length == 0 && (
+                    searchResults.length === 0 && (
 
-                        <div>
+                        <div className='list' >
                             אין תוצאות
                         </div>
                     )

@@ -1,21 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { Provider } from 'react-redux';
-// import store from './store';
 import ProductsContextProvider from './context/ProductContext';
 import Navigation from './components/Navigation';
 
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    // <Provider store={store}>
     <ProductsContextProvider>
       <Router>
+        <Navbar />
         <Navigation />
       </Router>
     </ProductsContextProvider>
-    // </Provider>
   );
 }
 

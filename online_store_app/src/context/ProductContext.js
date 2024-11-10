@@ -6,19 +6,27 @@ export default function ProductsContextProvider(props) {
 
     const [products, setProducts] = useState([]);
     const [selected, setSelected] = useState({});
+    const [status, setStatus] = useState(false);
 
     const loadProducts = async () => {
-        let res = await fetch(`https://tinyurl.com/vht7ah2`,
-            { method: 'GET' });
-        let data = await res.json();
-        setProducts(data);
+        try {
+
+            let res = await fetch(`https://tinyurl.com/vht7ah2`,
+                { method: 'GET' });
+            let data = await res.json();
+            setProducts(data);
+        }
+        catch (error) {
+            setStatus(true)
+        }
     }
 
     const values = {
         products,
         loadProducts,
         selected,
-        setSelected
+        setSelected,
+        status
     }
 
     return (

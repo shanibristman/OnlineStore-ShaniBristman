@@ -11,5 +11,11 @@
 }
 
 .card{
-    width:200px
+    width:150px
+}
+
+.failed{
+    display:flex;
+    justify-content:center;
+    margin: 15px;
 }

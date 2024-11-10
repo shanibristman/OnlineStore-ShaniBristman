@@ -2,18 +2,15 @@
 import React from 'react'
 import { useContext, useEffect } from 'react';
 
-
-// import { useSelector } from 'react-redux';
 import { ProductsContext } from '../../context/ProductContext';
 import Card from '../Card/Card'
+import Search from '../Search/Search';
 
 import './Home.css'
-import Search from '../Search/Search';
 
 export default function Home() {
 
-    // const { statusProducts, errorProducts } = useSelector((state) => state.data)
-    const { products, loadProducts } = useContext(ProductsContext);
+    const { products, loadProducts, status } = useContext(ProductsContext);
 
 
 
@@ -24,27 +21,21 @@ export default function Home() {
     }, [])
 
     return (
-        <>
-            <div className="title">
-                online store
-            </div>
-            <Search />
-            <div className='products_display'>
+        status ?
+            <div className='failed'>Failed to load.. Please try again later</div> :
+            <>
 
-                {console.log("🚀 ~ Home ~ products:", products[0])}
+                <Search className="searchComponent" />
+                <div className='products_display'>
 
-                {products.map(product => {
-                    return (
+                    {products.map(product => {
+                        return (
+                            <Card key={product.id} className="card" product={product} />
+                        )
+                    })
+                    }
 
-                        <Card key={product.id} className="card" product={product} />
-                        // <div key={product.id}> {product.id}</div>
-
-                    )
-
-                })
-                }
-
-            </div>
-        </>
+                </div>
+            </>
     )
 }

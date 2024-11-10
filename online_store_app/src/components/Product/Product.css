@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content:center; */
-    /* height: 80vh; */
 }
 
 .picP{
@@ -19,8 +17,47 @@
     padding:15px;
     width: 40%;
     justify-content: center;
+    position: relative;
+
+
 }
 
 .product .title{
-    bold: bold;
+    font-weight: bold;
+    font-size : 1em;
+    color: #6f8ca3;
+}
+
+.desc{
+    margin: 10px;
+    font-size: 0.5em;
+    color: #41464b;
+}
+
+.price{
+    font-size: 0.6em;
+    color: #41464b;
+}
+
+.moreBtn{
+    margin: 10px;
+    font-size: 0.5em;
+    text-decoration-line: underline;
+    color: #41464b;
+}
+
+.moreD{
+    position: absolute;
+    background-color: #e6e8ed;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    top: 45%;
+    padding: 5px;
+    opacity: 85%;
+    border-radius: 10px;
+    font-size:0.7em;
+    border: 0.8px solid #6f8ca3;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
 }
